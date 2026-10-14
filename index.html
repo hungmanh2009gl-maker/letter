@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f0e4">
+  <title>Một điều chưa kịp nói ♡</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="grain"></div>
+  <div class="music-control">
+    <button id="musicBtn" class="music-btn" aria-label="Bật hoặc tắt nhạc">
+      ♫ <span id="musicLabel">Bật nhạc</span>
+    </button>
+    <audio id="bgMusic" loop preload="none">
+      <source src="music.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <main>
+    <!-- MÀN HÌNH 1 -->
+    <section class="screen active" id="screen1">
+      <div class="hero">
+        <p class="eyebrow">A LITTLE SECRET · 2026</p>
+        <div class="sun"></div>
+        <p class="small-note">Gửi một người đặc biệt</p>
+        <h1>Có một điều<br>mình muốn nói...</h1>
+        <p class="subtitle">
+          Có thể cậu sẽ bất ngờ.<br>
+          Nhưng hãy dành cho mình vài phút nhé.
+        </p>
+        <button class="primary-btn" onclick="goTo(2)">
+          Bắt đầu câu chuyện <span>↗</span>
+        </button>
+        <p class="footnote">Một bí mật nhỏ đang chờ cậu.</p>
+      </div>
+    </section>
+
+    <!-- MÀN HÌNH 2 -->
+    <section class="screen" id="screen2">
+      <div class="content">
+        <p class="eyebrow">CHAPTER 01 — THE LETTER</p>
+        <h2>Một lá thư<br>chưa từng được gửi.</h2>
+        <p class="description">
+          Mình đã viết rồi lại xóa rất nhiều lần.
+          Có lẽ lần này, mình sẽ để những dòng chữ
+          tự nói thay lòng mình.
+        </p>
+
+        <button id="envelopeBtn" class="envelope" onclick="openEnvelope()"
+                aria-label="Mở phong bì">
+          <span class="letter-paper">Dành cho cậu ♡</span>
+          <span class="envelope-body"></span>
+          <span class="envelope-flap"></span>
+          <span class="envelope-heart">♥</span>
+        </button>
+
+        <p class="hint" id="envelopeHint">Chạm vào phong bì để mở thư</p>
+
+        <div id="letterText" class="letter-text">
+          <p>Gửi cậu,</p>
+          <p>
+            Mình không biết chính xác từ khi nào,
+            nhưng hình như cậu đã trở thành một phần
+            đặc biệt trong những ngày đi học bình thường
+            của mình.
+          </p>
+          <p>
+            Đôi khi chỉ cần nhìn thấy cậu ở hành lang,
+            nghe cậu nói chuyện hay vô tình chạm mắt,
+            một ngày bình thường cũng bỗng đáng nhớ hơn.
+          </p>
+          <p>
+            Nghe có vẻ ngốc nghếch nhỉ?
+            Nhưng đó thật sự là cảm giác của mình.
+          </p>
+          <button class="primary-btn" onclick="goTo(3)">
+            Đọc tiếp nhé ♡
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÀN HÌNH 3 -->
+    <section class="screen" id="screen3">
+      <div class="content">
+        <p class="eyebrow">CHAPTER 02 — LITTLE THINGS</p>
+        <h2>Thanh xuân có<br>những điều thật lạ.</h2>
+
+        <div class="memory-card">
+          <div class="polaroid">
+            <div class="photo-placeholder">
+              <span>☀</span>
+              <p>little moments</p>
+            </div>
+            <p class="photo-caption">Một ngày rất đỗi bình thường.</p>
+          </div>
+
+          <div class="memory-copy">
+            <p>
+              Có những điều nhỏ đến mức chẳng ai để ý,
+              nhưng mình lại nhớ khá lâu.s
+            </p>
+            <p>
+              Một nụ cười, một câu nói, một lần gặp nhau
+              tình cờ. Mình không biết cậu có nhận ra
+              không, nhưng đôi khi mình đã vui chỉ vì
+              những điều giản dị như thế.
+            </p>
+            <p>
+              Mình không mong cậu phải trở thành ai khác.
+              Mình chỉ muốn có cơ hội được hiểu cậu
+              nhiều hơn, một cách chân thành.
+            </p>
+          </div>
+        </div>
+
+        <p class="quote">
+          “Có những người xuất hiện rất khẽ,<br>
+          nhưng lại khiến một ngày trở nên đặc biệt.”
+        </p>
+
+        <button class="primary-btn" onclick="goTo(4)">
+          Còn một điều cuối cùng...
+        </button>
+      </div>
+    </section>
+
+    <!-- MÀN HÌNH 4 -->
+    <section class="screen" id="screen4">
+      <div class="content final-content">
+        <p class="eyebrow">CHAPTER 03 — THE TRUTH</p>
+        <div class="final-heart">♡</div>
+        <h2>Đến lúc bật mí<br>một chút rồi.</h2>
+
+        <p class="description">
+          Cậu đã đọc đến đây rồi,
+          nên mình nghĩ mình cũng nên can đảm hơn một chút.
+        </p>
+
+        <button id="revealBtn" class="primary-btn"
+                onclick="revealIdentity()">
+          Người gửi là ai nhỉ?
+        </button>
+
+        <div id="identity" class="identity">
+          <p class="small-note">Người đã viết những dòng này là...</p>
+          <h3 id="senderName"> anh ba chà cú ♡</h3>
+          <p>
+            Mình thích cậu. Không phải để cậu phải
+            trả lời ngay, mà vì mình muốn cậu biết
+            rằng tình cảm này là thật.
+          </p>
+          <p>
+            Nếu cậu cũng muốn, chúng ta có thể bắt đầu
+            bằng việc trò chuyện với nhau nhiều hơn nhé?
+          </p>
+
+          <div class="response-buttons">
+            <button class="primary-btn" onclick="respond('yes')">
+              Mình muốn thử ♡
+            </button>
+            <button class="secondary-btn" onclick="respond('think')">
+              Cho mình thêm thời gian nhé
+            </button>
+          </div>
+          <p id="responseMessage" class="response-message"></p>
+        </div>
+
+        <p class="footnote">Cảm ơn cậu đã đọc đến cuối thư.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="page-indicator" id="pageIndicator">01 / 04</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
